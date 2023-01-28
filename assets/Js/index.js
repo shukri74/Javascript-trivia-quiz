@@ -44,12 +44,12 @@ var wrapper = document.querySelector(".wrapper");
 
 var timer = document.querySelector("#time")
 
+var questionTitle = document.querySelector("#question-title")
+
 var secondsRemaining = 75;
 
 
 function countDown(){
-
-    timer.setInterval(function(){
 
         if (secondsRemaining <= 0){
 
@@ -63,9 +63,6 @@ function countDown(){
         }
 
 
-
-    })
-
     timer.textContent = secondsRemaining;
 
     console.log(secondsRemaining);
@@ -76,7 +73,7 @@ function countDown(){
 
 function beginQuiz(){
 
-   setInterval(countDown(), 1000)
+   setInterval(countDown, 1000)
     
 } 
 
@@ -88,20 +85,25 @@ function hideStartScreen(){
 
 };
 
-startTime.addEventListener("click", beginQuiz())
+startTime.addEventListener("click", beginQuiz)
+
+
+startTime.addEventListener("click", hideStartScreen)
 
 
 
 function showQuestions(){
 
+    for(var i = 0; i = questions.length; i++){
+        
+        questionTitle.textContent(questions[i][1])
+    }
+
+
 
 
 
 }
-
-beginQuiz();
-
-
 
 
 
