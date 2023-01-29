@@ -114,7 +114,7 @@ function showQuestions(){
 
     nextQuestion();
 
-
+ 
 }
 
 
@@ -124,6 +124,11 @@ function showQuestions(){
     choices.addEventListener("click", function(){
 
      i  = i + 1
+
+     if ( secondsRemaining <= 0 ||  i >= 4 ){
+
+        endQuiz();
+     }
 
      console.log(i)
 
@@ -139,10 +144,22 @@ function showQuestions(){
  
 })
 
-if(button.textContent == answers[i].textContent){
+if(choices1.textContent == answers[i].textContent || choices2.textContent == answers[i].textContent || choices3.textContent == answers[i].textContent || choices4.textContent == answers[i].textContent){
 
     score += 10
+
+    console.log(score)
 }
+
+}
+
+function endQuiz() {
+
+    window.location.href ="highscores.html"
+
+    clearInterval(timer);
+
+    
 
 }
 
