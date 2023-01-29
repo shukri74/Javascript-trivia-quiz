@@ -55,6 +55,9 @@ var choices4 = document.querySelector("#choices4")
 
 var button = document.querySelector(".answerButton")
 
+var endScreen = document.querySelector("#end-screen")
+
+var finalScore = document.querySelector("#final-score")
 
 function countDown(){
 
@@ -141,29 +144,36 @@ function showQuestions(){
     choices3.textContent = options[i][2]
 
     choices4.textContent = options[i][3]
+
+    addEventListener("click", function(){
+
+        
+    })
+
+        score = 10 + score
+    
+        console.log(answers[i].textContent)
+    
+        console.log(score)
+    
  
 })
 
-if(choices1.textContent == answers[i].textContent || choices2.textContent == answers[i].textContent || choices3.textContent == answers[i].textContent || choices4.textContent == answers[i].textContent){
 
-    score += 10
-
-    console.log(score)
-}
 
 }
 
 function endQuiz() {
 
-    window.location.href ="highscores.html"
-
     clearInterval(timer);
 
-    
+    endScreen.classList.remove("hide")
+
+    questionsContainer.style.display = "none";
 
 }
 
-
+finalScore.textContent = score
 
 
 console.log(score)
