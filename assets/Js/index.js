@@ -10,18 +10,18 @@
     
    var options = [
 
-         ["commas", "curly brackets", "quotes", "parenthses"],
+    ["strings", "booleans", "alerts", "numbers"],
+    
+    ["commas", "curly brackets", "quotes", "parentheses"],
 
-         ["strings", "booleans", "alerts", "numbers"],
+    ["quotes", "curly brackets", "parentheses", "square brackets"],
 
-         ["quotes", "curly brackets", "parentheses", "square brackets"],
-
-         ["Javascript", "terminal/bash","for loops", "console log"],
+    ["Javascript", "terminal/bash","for loops", "console log"],
 
 ]
 
 
- var answers =   [ "parentheses", "alerts", "quotes", "console log"]
+ var answers =   [ "alerts" , "parentheses", "quotes", "console log"]
 
 
 
@@ -52,6 +52,8 @@ var choices2 = document.querySelector("#choices2")
 var choices3 = document.querySelector("#choices3")
 
 var choices4 = document.querySelector("#choices4")
+
+var button = document.querySelector(".answerButton")
 
 
 function countDown(){
@@ -92,32 +94,61 @@ function hideStartScreen(){
 
 startTime.addEventListener("click", beginQuiz)
 
-
 startTime.addEventListener("click", showQuestions)
 
-
+var i = 0;
 
 function showQuestions(){
 
     questionsContainer.classList.remove("hide");
 
-    let i = 0
-
     questionTitle.textContent = questionText[i] 
 
     choices1.textContent = options[i][i]
 
-    choices2.textContent = options[i+1][i+1]
+    choices2.textContent = options[i][i+1]
 
-    choices3.textContent = options[i+2][i+2]
+    choices3.textContent = options[i][i+2]
 
-    choices4.textContent = options[i+3][i+3]
+    choices4.textContent = options[i][i+3]
 
+    nextQuestion();
+
+
+}
+
+
+ function nextQuestion(){
+
+
+    choices.addEventListener("click", function(){
+
+     i  = i + 1
+
+     console.log(i)
+
+    questionTitle.textContent = questionText[i] 
+        
+    choices1.textContent = options[i][0]
+
+    choices2.textContent = options[i][1]
+
+    choices3.textContent = options[i][2]
+
+    choices4.textContent = options[i][3]
+ 
+})
+
+if(button.textContent == answers[i].textContent){
+
+    score += 10
+}
 
 }
 
 
 
 
+console.log(score)
 
 
