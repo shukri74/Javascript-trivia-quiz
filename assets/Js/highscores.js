@@ -11,11 +11,15 @@ choices2.addEventListener("click", function(){
         console.log(score1)
     
         finalscore += score1
+
+        feedbackContainer.textContent = "Right!"
     }
 
     else{
 
         secondsRemaining -= 10
+
+        feedbackContainer.textContent = "Wrong!"
     }
 })
 
@@ -31,11 +35,16 @@ choices3.addEventListener("click", function(){
         console.log(score2)
     
         finalscore += score2
+
+        feedbackContainer.textContent = "Right!"
+    
     }
 
     else{
         
         secondsRemaining -= 10
+
+        feedbackContainer.textContent = "Wrong!"
     }
 })
 
@@ -50,12 +59,16 @@ choices4.addEventListener("click", function(){
         console.log(score3)
 
         finalscore += score3;
+
+        feedbackContainer.textContent = "Right!"
     
     }
 
     else{
         
         secondsRemaining -= 10
+
+        feedbackContainer.textContent = "Wrong!"
     }
 
 })
@@ -72,11 +85,15 @@ choices1.addEventListener("click", function(){
         console.log(score4)
      
         finalscore += score4;
+
+        feedbackContainer.textContent = "Right!"
     }
 
     else{
         
         secondsRemaining -= 10
+
+        feedbackContainer.textContent = "Wrong!"
     }
 })
 

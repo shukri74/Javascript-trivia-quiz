@@ -64,6 +64,8 @@ var initialsInput = document.querySelector("#initials")
 
 var submitButton = document.querySelector("#submit")
 
+var feedbackContainer = document.querySelector("#feedback")
+
 function countDown(){
 
         if (secondsRemaining <= 0){
@@ -83,6 +85,8 @@ function countDown(){
 }
 
 function beginQuiz(){
+    
+    feedbackContainer.classList.remove("hide")
 
    setInterval(countDown, 1000)
 
