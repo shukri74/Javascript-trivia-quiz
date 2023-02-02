@@ -24,8 +24,7 @@
  var answers =   [ "alerts" , "parentheses", "quotes", "console log"]
 
 
-
-var score = 0;
+ var finalscore = 0;
 
 var questionIndex = 0;
 
@@ -57,7 +56,13 @@ var button = document.querySelector(".answerButton")
 
 var endScreen = document.querySelector("#end-screen")
 
-var finalScore = document.querySelector("#final-score")
+var finalScore = document.querySelector(".final-score")
+
+var highscores = document.querySelector("#highscores")
+
+var initialsInput = document.querySelector("#initials")
+
+var submitButton = document.querySelector("#submit")
 
 function countDown(){
 
@@ -133,7 +138,6 @@ function showQuestions(){
         endQuiz();
      }
 
-     console.log(i)
 
     questionTitle.textContent = questionText[i] 
         
@@ -145,37 +149,27 @@ function showQuestions(){
 
     choices4.textContent = options[i][3]
 
-    addEventListener("click", function(){
 
-        
-    })
-
-        score = 10 + score
-    
-        console.log(answers[i].textContent)
-    
-        console.log(score)
     
  
 })
-
-
 
 }
 
 function endQuiz() {
 
-    clearInterval(timer);
-
     endScreen.classList.remove("hide")
 
     questionsContainer.style.display = "none";
 
+    console.log(finalscore);
+
+    finalScore.textContent = "Your final score is " + finalscore;
+
+    clearInterval(timer);
+
+    saveHighscores();
 }
 
-finalScore.textContent = score
-
-
-console.log(score)
 
 
