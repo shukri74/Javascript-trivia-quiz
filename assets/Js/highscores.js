@@ -1,5 +1,18 @@
 var finalscore = 0;
 
+var choices1 = document.querySelector("#choices1")
+
+var choices2 = document.querySelector("#choices2")
+
+var choices3 = document.querySelector("#choices3")
+
+var choices4 = document.querySelector("#choices4")
+
+var submitButton = document.querySelector("#submit")
+
+
+function ScoreCalculator(){
+
 choices2.addEventListener("click", function(){
 
     if(choices2.textContent == answers[i]){
@@ -97,39 +110,38 @@ choices1.addEventListener("click", function(){
     }
 })
 
-console.log(finalscore)
+}
+
 
 
 function saveHighscores() {
 
-    submitButton.addEventListener("click", function(event){
+    submitButton.addEventListener("click", function(){
+
+    window.location.href = "highscores.html"
     
-    event.preventDefault();
-
-
     var initials = initialsInput.value;
+    
+    window.localStorage.setItem("initials", JSON.stringify(initials));
 
-    if(initials != null){
+    window.localStorage.setItem("highscores", JSON.stringify(finalscore))
 
-        window.localStorage.setItem("initials", JSON.stringify(initials));
-
-    }
-
-    if( finalscore != null){
-
-        window.localStorage.setItem("highscores", JSON.stringify(finalscore))
-
-    }
-
-    window.location.href = highscores.html
+    highscoresArray = JSON.parse(window.localStorage.getItem("highscores")) || {};
     
     var highscores = document.querySelector("#highscores")
 
-    highscores.textContent = localStorage.getItem("highscores");
-    
+    var newScore = document.createElement("li");
+
+    highscores.appendChild(newScore)
+
+    newScore.textContent = localStorage.getItem("initials") + localStorage.getItem("highscores");
     
     console.log(initials.value)
-    })
+   
+})
     
     
-    }
+}
+
+
+saveHighscores();

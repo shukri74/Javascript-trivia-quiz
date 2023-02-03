@@ -42,6 +42,8 @@ var choices = document.querySelector("#choices")
 
 var secondsRemaining = 75;
 
+var highscoresArray = [];
+
 var startScreen = document.querySelector("#start-screen")
 
 var choices1 = document.querySelector("#choices1")
@@ -68,7 +70,7 @@ var feedbackContainer = document.querySelector("#feedback")
 
 function countDown(){
 
-        if (secondsRemaining <= 0){
+        if (secondsRemaining <= 0 ){
 
             clearInterval(timer);
         
@@ -86,12 +88,14 @@ function countDown(){
 
 function beginQuiz(){
     
-    feedbackContainer.classList.remove("hide")
+   feedbackContainer.classList.remove("hide")
 
    setInterval(countDown, 1000)
 
    hideStartScreen();
-    
+
+   ScoreCalculator();
+
 } 
 
 
@@ -125,10 +129,11 @@ function showQuestions(){
     choices4.textContent = options[i][i+3]
 
     nextQuestion();
-
  
+    return
 }
 
+ 
 
  function nextQuestion(){
 
@@ -153,14 +158,12 @@ function showQuestions(){
 
     choices4.textContent = options[i][3]
 
-
-    
  
 })
 
 }
 
-function endQuiz() {
+function endQuiz() { 
 
     endScreen.classList.remove("hide")
 
@@ -168,12 +171,11 @@ function endQuiz() {
 
     console.log(finalscore);
 
-    finalScore.textContent = "Your final score is " + finalscore;
+    finalScore.textContent = "Your final score is " + finalscore; 
 
-    clearInterval(timer);
-
-    saveHighscores();
 }
+
+
 
 
 
