@@ -283,22 +283,23 @@ submitButton.addEventListener("click", saveHighscores)
 
 
 function saveHighscores() {
-    
+
     var initials = initialsInput.value;
 
-    initialsArray.push(initials)
-
-    highscoresArray.push(finalscore)
+    let highscoresArray = JSON.parse(localStorage.getItem("highscores")) || [];
 
     var highscoresObject = {
 
-        name: initialsArray,
+        name: initials.toUpperCase(),
 
-        score: highscoresArray,
+        score: finalscore,
     }
 
-    window.localStorage.setItem("Records", JSON.stringify(highscoresObject))
+    highscoresArray.push(highscoresObject)
 
+    window.localStorage.setItem("highscores", JSON.stringify(highscoresArray))
+
+    window.location.href = "Highscores.html"
 
 }
 

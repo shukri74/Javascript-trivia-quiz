@@ -10,22 +10,32 @@ var choices4 = document.querySelector("#choices4")
 
 var submitButton = document.querySelector("#submit")
 
+var clearButton = document.querySelector("#clear")
+
 
 
 function displayHighscores () {
 
-    newscore = document.createElement("li");
-
-    highscores.appendChild(newscore);
-
-    newscore.className = "a"
-
-    var records = JSON.parse(window.localStorage.getItem("Records"))
+    var records = JSON.parse(window.localStorage.getItem("highscores"))
 
     console.log(records)
 
-    newscore.textContent = records.name[0] + " " + records.score[0]
+   for (var index = 0; index < records.length; index++){
+   
+   var newscore = document.createElement("li");
+
+   highscores.append(newscore);
+   
+   newscore.textContent = records[index].name + " " + records[index].score;
+
+}
 
 }
 
 displayHighscores();
+
+clearButton.addEventListener("click", function(){
+
+    localStorage.clear()
+})
+
