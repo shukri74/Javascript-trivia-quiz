@@ -72,7 +72,7 @@ var highscoresArray = []
 
 function countDown(){
 
-        if (secondsRemaining <= 0 ){
+        if (secondsRemaining <= 0 || i > 3 ){
 
             clearInterval(timer);
         
@@ -147,6 +147,7 @@ function showQuestions(){
      if ( secondsRemaining <= 0 ||  i >= 4 ){
 
         endQuiz();
+
 
      }
 
