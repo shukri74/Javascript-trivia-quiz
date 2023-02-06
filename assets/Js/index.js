@@ -66,6 +66,10 @@ var submitButton = document.querySelector("#submit")
 
 var feedbackContainer = document.querySelector("#feedback")
 
+var audioCorrect = new Audio('../sfx/correct.wav');
+
+var audioWrong = new Audio('../sfx/incorrect.wav');
+
 var initialsArray = []
 
 var highscoresArray = []
@@ -182,6 +186,8 @@ function ScoreCalculator(){
             finalscore += score1
     
             feedbackContainer.textContent = "Right!"
+
+            audioCorrect.play()
         }
     
         else{
@@ -189,6 +195,8 @@ function ScoreCalculator(){
             secondsRemaining -= 10
     
             feedbackContainer.textContent = "Wrong!"
+
+            audioWrong.play()
         }
     })
     
@@ -206,6 +214,8 @@ function ScoreCalculator(){
             finalscore += score2
     
             feedbackContainer.textContent = "Right!"
+
+            audioCorrect.play()
         
         }
     
@@ -214,6 +224,8 @@ function ScoreCalculator(){
             secondsRemaining -= 10
     
             feedbackContainer.textContent = "Wrong!"
+
+            audioWrong.play()
         }
     })
     
@@ -230,6 +242,8 @@ function ScoreCalculator(){
             finalscore += score3;
     
             feedbackContainer.textContent = "Right!"
+
+            audioCorrect.play()
         
         }
     
@@ -238,6 +252,8 @@ function ScoreCalculator(){
             secondsRemaining -= 10
     
             feedbackContainer.textContent = "Wrong!"
+
+            audioWrong.play()
         }
     
     })
@@ -256,6 +272,8 @@ function ScoreCalculator(){
             finalscore += score4;
     
             feedbackContainer.textContent = "Right!"
+
+            audioCorrect.play()
         }
     
         else{
@@ -263,6 +281,8 @@ function ScoreCalculator(){
             secondsRemaining -= 10
     
             feedbackContainer.textContent = "Wrong!"
+
+            audioWrong.play()
         }
     })
     
