@@ -66,9 +66,9 @@ var submitButton = document.querySelector("#submit")
 
 var feedbackContainer = document.querySelector("#feedback")
 
-var audioCorrect = new Audio('../sfx/correct.wav');
+var audioCorrect = new Audio('./sfx/correct.wav');
 
-var audioWrong = new Audio('../sfx/incorrect.wav');
+var audioWrong = new Audio('./sfx/incorrect.wav');
 
 var initialsArray = []
 
