@@ -320,7 +320,7 @@ function saveHighscores() {
 
     window.localStorage.setItem("highscores", JSON.stringify(highscoresArray))
 
-    window.location.href = "highscores.html"
+    window.location.href = "highscores.html";
 
 }
 
